@@ -1,0 +1,34 @@
+{
+  "name": "first-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebRTC-Study/first-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebRTC-Study/first-project/issues"
+  },
+  "homepage": "https://github.com/WebRTC-Study/first-project#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security",
+    "nanoid": "^4.0.0",
+    "nodemon": "^2.0.19",
+    "path": "^0.12.7",
+    "socket.io": "^4.5.1"
+  }
+}
