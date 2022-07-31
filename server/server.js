@@ -39,6 +39,38 @@ app.use(express.json());
 app.use(express.static(dir.public));
 app.use(bodyParser.urlencoded({ extended: true })); // Need for Slack API body parser
 
+io.sockets.on("connect", (socket) => {
+    log.debug("[" + socket.id + "] connection accepted");
+
+    socket.channels = {};
+    sockets[socket.id] = socket;
+
+    const transport = socket.conn.transport.name; // in most cases, "polling"
+    log.debug("[" + socket.id + "] Connection transport", transport);
+
+    /**
+     * Check upgrade transport
+     */
+    socket.conn.on("upgrade", () => {
+        const upgradedTransport = socket.conn.transport.name; // in most cases, "websocket"
+        log.debug(
+            "[" + socket.id + "] Connection upgraded transport",
+            upgradedTransport
+        );
+    });
+
+    /**
+     * On peer diconnected
+     */
+    socket.on("disconnect", (reason) => {
+        for (let channel in socket.channels) {
+            removePeerFrom(channel);
+        }
+        log.debug("[" + socket.id + "] disconnected", { reason: reason });
+        delete sockets[socket.id];
+    });
+});
+
 server.listen(port, () => {
     log.debug(`%c SIGN-SERVER started...`);
 });
