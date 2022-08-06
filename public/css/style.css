@@ -19,13 +19,36 @@
 .nav__container {
     flex : 0.1;
     background : #fff;
+    border : 1px solid #adafb1;
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+    justify-content : center;
 }
+
+.nav__options__button {
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+    width : 50px;
+    height : 50px;
+    padding : .2rem;
+    margin : .5rem;
+    border : 2px solid #000;
+    border-radius : .3rem;
+}
+
+.nav__options__button i {
+    font-size : 1.5rem;
+}
+
 
 .video__container {
     flex : 0.7;
     display : flex;
     flex-direction : column;
-    background : #8285;
+    background : #fff;
 }
 
 .chat__container {
@@ -35,18 +58,62 @@
 
 .video__channel__title {
     width : 100%;
-    background : #333;
+    background : #fff;
     flex : 0.1;
+    border-bottom : 1px solid #adafb1;
+    display : flex;
+    align-items : center;
+    justify-content : center;
+}
+
+.video__channel__title i {
+    font-size : 2rem;
+}
+
+.video__channel__title p {
+    margin-left : .5rem;
+    font-size : 1.4rem;
 }
 
 .video__grid {
+    display : flex;
+    justify-content : center;
+    align-items : center;
     width : 100%;
-    background : #288189;
+    background : #fff;
     flex : 0.8;
 }
 
+.video__Box {
+    background : #000;
+    border-radius : 20px;
+    width : 90%;
+    height : 90%;
+}
+
 .video__navigation {
+    display : flex;
+    justify-content : center;
+    align-items : center;
     width : 100%;
     flex : 0.1;
-    background : #218222;
+    background : #fff;
+    border-top : 1px solid #888;
+}
+
+.options__button {
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    padding : .2rem;
+    margin : .4rem;
+    background : #fff;
+    width : 50px;
+    height : 50px;
+    border : 2px solid #000;
+    border-radius : 0.3rem;
+}
+
+.options__button i {
+    font-size : 1.3rem;
 }
