@@ -80,16 +80,38 @@
     justify-content : center;
     align-items : center;
     width : 100%;
-    background : #fff;
+    height : 50%;
     flex : 0.8;
 }
 
 .video__Box {
     position : relative;
+    display : flex;
     background : #000;
     border-radius : 20px;
     width : 90%;
     height : 90%;
+    overflow : hidden;
+}
+
+.video__SurfaceBox {
+    width : 100%;
+    height : 100%;
+}
+
+.video__SurfaceBox video {
+    width : 100%;
+    height : 100%;
+    object-fit : cover;
+}
+
+.video__SurfaceBox > .player__name {
+    position : absolute;
+    top : .3rem;
+    left : .3rem;
+    width : 130px;
+    height : 30px;
+    border : 1px solid #000;
 }
 
 .local__container {
@@ -98,25 +120,16 @@
     height : 100%;
 }
 
-.local__container > .player__name {
-    position : absolute;
-    top : .3rem;
-    left : .3rem;
-    width : 130px;
-    height : 30px;
-    border : 1px solid #888;
-}
-
 .remote__container {
-    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 8rem;
     height: 100%;
-    right: 0;
-    top: 0;
     border : 1px solid #888;
+    padding : 0.5rem;
+    margin : 0.5rem;
+    overflow-y : auto;
 }
 
 .remote__container video {
