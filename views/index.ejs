@@ -12,6 +12,10 @@
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.bundle.min.js"
+        integrity="sha512-9GacT4119eY3AcosfWtHMsT5JyZudrexyEVzTBWV3viP/YfB9e2pEy3N7WXL3SV6ASXpTU0vzzSxsbfsuUH4sQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <title>
         <%= title %>
     </title>
@@ -34,7 +38,7 @@
                 <div class="nav__options__button">
                     <i class="fa-brands fa-rocketchat"></i>
                 </div>
-                <div class="nav__options__button">
+                <div class="nav__options__button" id="nav__chatBtn">
                     <i class="fa-solid fa-user-group"></i>
                 </div>
             </div>
@@ -55,18 +59,6 @@
                             <video src=""></video>
                             <video src=""></video>
                             <video src=""></video>
-                            <video src=""></video>
-                            <video src=""></video>
-                            <video src=""></video>
-                            <video src=""></video>
-                            <video src=""></video>
-                            <video src=""></video>
-                            <video src=""></video>
-                            <video src=""></video>
-                            <video src=""></video>
-                            <video src=""></video>
-                            <video src=""></video>
-                            <video src=""></video>
                         </div>
                     </div>
                 </div>
@@ -83,7 +75,7 @@
                     <div class="options__button">
                         <i class="fa-solid fa-closed-captioning"></i>
                     </div>
-                    <div class="options__button">
+                    <div class="options__button" id="chatBtn">
                         <i class="fa-solid fa-comment"></i>
                     </div>
                 </div>
@@ -91,7 +83,53 @@
 
 
             <div class="chat__container">
+                <!-- <nav class="chat__navbar">
+                    <div class="nav__message">
+                        <p>Message</p>
+                    </div>
+                    <div class="nav__group">
+                        <p>Group</p>
+                    </div>
+                </nav> -->
 
+                <ul class="nav nav-tabs chat__navbar" id="myTab" role="tablist">
+                    <li class="nav-item nav__message" role="presentation">
+                        <button class="nav-link active" id="message-tab" data-bs-toggle="tab" data-bs-target="#message"
+                            type="button" role="tab" aria-controls="message" aria-selected="true">Message</button>
+                    </li>
+                    <li class="nav-item nav__group" role="presentation">
+                        <button class="nav-link" id="group-tab" data-bs-toggle="tab" data-bs-target="#group"
+                            type="button" role="tab" aria-controls="group" aria-selected="false">Group</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="chatTabContent">
+                    <div class="tab-pane fade show active" id="message" role="tabpanel" aria-labelledby="message-tab">
+                        <div class="chat__message__window">
+                            <div class="inner__message__window">
+
+                                <div class="send__peer">
+                                    <div class="send__profile"></div>
+                                    <div class="send__message">sdag</div>
+                                </div>
+                                <div class="receive__peer">
+                                    <div class="receive__profile"></div>
+                                    <div class="receive__message">sdagg</div>
+                                </div>
+
+                            </div>
+                            <div class="message__input">
+                                <input type="text" placeholder="Please Input the Message">
+                                <button>Send</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="group" role="tabpanel" aria-labelledby="group-tab">
+                        <div class="chat__group__window">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

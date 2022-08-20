@@ -1,3 +1,5 @@
+@import "../lib/bootstrap.min.css";
+
 * {
     margin : 0;
     padding :0;
@@ -7,7 +9,7 @@
 .container {
     width : 100vw;
     height : 100vh;
-    background : #000;
+    background : #fff;
 }
 
 .wrapper {
@@ -19,7 +21,6 @@
 .nav__container {
     flex : 0.1;
     background : #fff;
-    border : 1px solid #adafb1;
     display : flex;
     flex-direction : column;
     align-items : center;
@@ -37,6 +38,7 @@
     margin : .5rem;
     border : 2px solid #000;
     border-radius : .3rem;
+    cursor : pointer;
 }
 
 .nav__options__button i {
@@ -45,7 +47,7 @@
 
 
 .video__container {
-    flex : 0.7;
+    flex : 0.9;
     display : flex;
     flex-direction : column;
     background : #fff;
@@ -53,7 +55,62 @@
 
 .chat__container {
     flex : 0.2;
-    background : #2828;
+    display: none;
+    flex-direction: column;
+    border-radius: 25px;
+    margin: 1rem;
+    padding: 1rem;
+    background: #f5f7fb;
+}
+
+.chat__navbar {
+    display : flex;
+    align-items : center;
+    justify-content : center;
+    background: #fff;
+    flex: 0.05;
+    padding: 0.5rem;
+    border-radius: 25px;
+    margin-bottom: 1rem;
+}
+
+.chat__navbar div {
+    flex : 0.5;
+    text-align : center;
+}
+
+.chat__message__window {
+    flex: 0.95;
+    height: 100%;
+    width: 100%;
+    background: #f5f7fb;
+    display: flex;
+    flex-direction: column;
+    border-radius : 25px;
+}
+
+.inner__message__window {
+    flex : 0.9;
+    padding : 1rem;
+}
+
+.inner__message__window > .receive__peer {
+    display: flex;
+    justify-content: end;
+}
+
+.message__input {
+    flex : 0.1;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding : 1rem;
+}
+
+.message__input input {
+    height: 2rem;
+    font-size: .8rem;
+    padding: 1rem;
 }
 
 .video__channel__title {
@@ -126,18 +183,19 @@
     align-items: center;
     width: 8rem;
     height: 100%;
-    border : 1px solid #888;
     padding : 0.5rem;
     margin : 0.5rem;
     overflow-y : auto;
 }
 
 .remote__container video {
-    width : 7.2rem;
-    height : 7.2rem;
-    border-radius : .5rem;
-    border : 1px solid #fff;
-    margin-top : .2rem;
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #fff;
+    margin-top: 0.2rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
 }
 
 .video__navigation {
@@ -161,8 +219,18 @@
     height : 50px;
     border : 2px solid #000;
     border-radius : 0.3rem;
+    cursor : pointer;
 }
 
 .options__button i {
     font-size : 1.3rem;
+}
+
+.tab-content {
+    flex : 0.95;
+}
+
+.tab-content .tab-pane {
+    height: 100%;
+    width: 100%;
 }
